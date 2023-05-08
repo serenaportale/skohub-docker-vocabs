@@ -2,22 +2,22 @@
   "id": "https://example.org/colour-with-hierarchy/grassgreen",
   "type": "Concept",
   "prefLabel": {
-    "en": "grass-green",
-    "de": "Grasgrün"
+    "de": "Grasgrün",
+    "en": "grass-green"
   },
   "broader": {
     "id": "https://example.org/colour-with-hierarchy/green",
     "prefLabel": {
-      "en": "green",
-      "de": "Grün"
+      "de": "Grün",
+      "en": "green"
     }
   },
   "inScheme": [
     {
       "id": "https://example.org/colour-with-hierarchy/",
       "title": {
-        "en": "Colour vocabulary with hierarchy",
-        "de": "Farbvokabular mit Hierarchie"
+        "de": "Farbvokabular mit Hierarchie",
+        "en": "Colour vocabulary with hierarchy"
       }
     }
   ],
