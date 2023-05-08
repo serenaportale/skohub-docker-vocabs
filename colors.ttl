@@ -1,17 +1,85 @@
-@prefix colour: <https://example.org/colour/> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix t: <http://animals.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 
-colour: a skos:ConceptScheme ;
-    dct:title "Colour Vocabulary"@en, "Farbvokabular"@de ;
-    dct:creator "Hans Dampf"@de ;
-    dct:created "2021-11-02"^^xsd:date ;
-    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    skos:hasTopConcept colour:violet .
+t: a skos:ConceptScheme ;
 
-colour:violet a skos:Concept ;
-    skos:prefLabel "Violett"@de, "violet"@en ;
-    skos:altLabel "Lila"@de, "purple"@en ;
-    skos:topConceptOf colour: .
+    dct:title "Unsere Tiere"@de ;
 
+    dct:license <http://creativecommons.org/pblicdomain/zero/1.0/> ;
+
+    skos:hasTopConcept t:Vögel, t:Säugetiere, t:Reptilien, t:Fische, t:Spinnentiere .
+
+
+t:Vögel a skos:Concept ;
+
+    skos:prefLabel "Vögel"@de, "Birds"@en ;
+
+    skos:inScheme t: ;
+
+    skos:narrower t:FliegendeVögel ;
+
+    skos:narrower t:Laufvögel ;
+
+    skos:topConceptOf t: .
+
+
+t:FliegendeVögel a skos:Concept ;
+
+    skos:inScheme t: ;
+
+    skos:prefLabel "Fliegende Vögel"@de ;
+
+    skos:definition: "Vögel, die in der Lage sind zu fliegen"@de ;
+
+    skos:example "Kanarienvogel"@de .
+
+t:Laufvögel a skos:Concept ;
+
+    skos:inScheme t: ;
+
+    skos:prefLabel "Laufvögel"@de ;
+
+    skos:definition: "Vögel, die nicht fliegen können"@de ;
+
+    skos:example: "Emu", "Pinguin"@de .
+
+
+t:Säugetiere a skos:Concept ;
+skos:prefLabel "Säugetiere"@de, "mammals"@en ;
+
+    skos:definition "Säugetiere sind eine klasse von Wirbeltieren, die sich dadurch auszeichnen, dass sie ihre Jungen mit Milch aus den Brustdrüsen füttern."@de ;
+
+    skos:example: "Katzen"@de .
+
+
+t:Reptilien  a skos:Concept ;
+skos:prefLabel "Reptilien"@de, "reptiles"@en ;
+
+    skos:definition "Landwirbeltiere mit ähnlicher Morphologie und Physiologie"@de ;
+
+    skos:example: "Schlangen"@de .
+
+
+t:Fische 
+ a skos:Concept ;
+ skos:prefLabel "Fische"@de;
+  skos:definition "Im Wasser lebendes, durch Kiemen atmendes Wirbeltier mit einem von Schuppen bedeckten Körper und Flossen, mit deren Hilfe es sich fortbewegt"@de ;
+skos:example "Hering"@de ;
+skos:narrower t:EuropäischeSprotte  .
+
+
+t:EuropäischeSprotte
+skos:prefLabel "Europäische Sprotte"@de ;
+a skos:Concept ;
+skos:inScheme t: ;
+skos:definition "Fisch mit grünlich blauem Rücken und silberglänzenden, leicht gewölbten Körperseiten, der als Speisefisch verwendet wird"@de .
+      
+t:Spinnentiere a skos:Concept ;
+skos:inScheme t: ;
+
+    skos:prefLabel "Spinnentiere"@de ;
+
+    skos:definition "Spinnentiere haben acht Beine und meist auch acht Augen"@de ;
+
+    skos:example "Spinnen"@de .
